@@ -1,0 +1,34 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.container {
+  margin-top: 40px;
+  text-align: center;
+}
+
+button {
+  padding: 5px 15px 5px 15px;
+  margin-bottom: 15px;
+  border-radius: 20px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+ul {
+  width: 25%;
+  margin: 0 auto;
+}
+
+li {
+  list-style: none;
+  padding: 5px;
+  border: 1px solid black;
+  margin: -1px 0 0 0;
+}

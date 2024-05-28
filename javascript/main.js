@@ -19,7 +19,6 @@ createApp({
 
       const mailResponses = await Promise.all(mailPromises);
       this.mails = mailResponses.map((response) => response.data.response);
-      console.log(this.mails);
     },
   },
 }).mount("#app");
