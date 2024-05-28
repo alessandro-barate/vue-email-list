@@ -8,15 +8,15 @@ createApp({
       message: "Hello Vue!",
       mails: Array(10),
       index: 10,
+      urlMails: "https://flynn.boolean.careers/exercises/api/random/mail",
     };
   },
   created() {
-    axios
-      .get("https://flynn.boolean.careers/exercises/api/random/mail")
-      .then((response) => {
-        this.mails = response.data.response;
-        // console.log(response.data.response);
-        // console.log(this.mails);
-      });
+    axios.get(this.urlMails).then((response) => {
+      console.log(response.data);
+      this.mails = response.data;
+      // console.log(response.data.response);
+      console.log(this.mails);
+    });
   },
 }).mount("#app");
