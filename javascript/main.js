@@ -10,12 +10,15 @@ createApp({
     };
   },
   methods: {
-    mailGeneration() {
+    async mailGeneration() {
+      this.mails = [];
+      const mailPromises = [];
       for (let i = 0; i < 10; i++) {
-        this.mails.push(axios.get(this.urlMails));
-
-        console.log(response);
+        mailPromises.push(axios.get(this.urlMails));
       }
+
+      const mailResponses = await Promise.all(mailPromises);
+      this.mails = mailResponses.map((response) => response.data.response);
       console.log(this.mails);
     },
   },

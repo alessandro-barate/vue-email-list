@@ -8,9 +8,9 @@
   <body>
     <div id="app">
       <div>
-        <button @click="mailGeneration">Genera mail</button>
+        <button @click="mailGeneration()">Genera mail</button>
         <ul v-if="mails.length === 10">
-          <li v-for="(mail, index) in mails" :key="index">{{ mail}}</li>
+          <li v-for="(mail, index) in mails" :key="index">{{ mail }}</li>
         </ul>
         <div v-else>Generazione...</div>
       </div>
