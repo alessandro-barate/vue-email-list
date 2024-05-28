@@ -5,18 +5,18 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
-      message: "Hello Vue!",
-      mails: Array(10),
-      index: 10,
+      mails: [],
       urlMails: "https://flynn.boolean.careers/exercises/api/random/mail",
     };
   },
-  created() {
-    axios.get(this.urlMails).then((response) => {
-      console.log(response.data);
-      this.mails = response.data;
-      // console.log(response.data.response);
+  methods: {
+    mailGeneration() {
+      for (let i = 0; i < 10; i++) {
+        this.mails.push(axios.get(this.urlMails));
+
+        console.log(response);
+      }
       console.log(this.mails);
-    });
+    },
   },
 }).mount("#app");
